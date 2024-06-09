@@ -4,102 +4,84 @@ body {
     padding: 0;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.hero {
-    background-image: linear-gradient(to bottom, #333, #555);
-    background-size: 100% 300px;
-    background-position: 0% 100%;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+header {
+    background-color: #333;
     color: #fff;
+    padding: 1em;
+    text-align: center;
 }
 
-.hero h1 {
-    font-size: 48px;
-    font-weight: bold;
-    margin-bottom: 20px;
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
-.hero p {
-    font-size: 18px;
-    color: #ccc;
+nav li {
+    margin-right: 20px;
 }
 
-.hero-link {
-    font-size: 18px;
+nav a {
     color: #fff;
     text-decoration: none;
 }
 
-.hero-link:hover {
-    color: #aaa;
+nav a:hover {
+    color: #ccc;
 }
 
-.projects {
+main {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
 }
 
-.project {
-    margin: 20px;
-    width: calc(33.33% - 20px);
-    background-color: #f9f9f9;
-    padding: 20px;
-    border: 1px solid #ddd;
+section {
+    background-color: #f7f7f7;
+    padding: 2em;
+    margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.project h2 {
+h1 {
     font-size: 24px;
-    font-weight: bold;
     margin-bottom: 10px;
 }
 
-.project p {
-    font-size: 16px;
-    color: #666;
-}
-
-.timeline {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.timeline-item {
-    position: relative;
+p {
+    font-size: 18px;
     margin-bottom: 20px;
 }
 
-.timeline-item::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background-color: #333;
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.timeline-item h3 {
-    font-size: 18px;
-    font-weight: bold;
+li {
     margin-bottom: 10px;
 }
 
-.timeline-item p {
-    font-size: 16px;
-    color: #666;
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    clear: both;
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 0;
 }
