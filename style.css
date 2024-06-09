@@ -1,4 +1,3 @@
-/* styles.css */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -34,6 +33,16 @@ body {
 .hero p {
     font-size: 18px;
     color: #ccc;
+}
+
+.hero-link {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero-link:hover {
+    color: #aaa;
 }
 
 .projects {
