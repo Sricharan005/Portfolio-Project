@@ -1,41 +1,30 @@
-name: Portfolio Website
+name: Build and Deploy Portfolio
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y php
-          sudo apt-get install -y apache2
-          sudo service apache2 start
-
-      - name: Copy files to Apache directory
-        run: |
-          sudo cp -r . /var/www/html/
-
-      - name: Configure Apache
-        run: |
-          sudo chown -R www-data:www-data /var/www/html/
-          sudo chmod -R 755 /var/www/html/
-
-      - name: Start Apache
-        run: |
-          sudo service apache2 start
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-to-github-pages@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          target: /var/www/html
-          repository: your-username/your-repo-name
-          branch: main
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Install dependencies
+      run: |
+        npm install
+        
+    - name: Build website
+      run: |
+        npm run build
+        
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build
+        force_orphan: true
